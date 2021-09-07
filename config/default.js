@@ -61,5 +61,17 @@ export const config = {
       },
       factor: 0.75
     },
+    {
+      key: 'Sales Discount',
+      fn: {
+        args:['product'],
+        body:"return product.sale_price / (product.price - product.sale_price)"
+      },
+      model: {
+        type: 'Logarithmic',
+        normalisation: 'Zero'
+      },
+      factor: 1.4
+    },
   ]
 }
