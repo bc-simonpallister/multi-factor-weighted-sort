@@ -73,5 +73,17 @@ export const config = {
       },
       factor: 1.4
     },
+    {
+      key: 'Price',
+      fn: {
+        args:['product'],
+        body:"return product.calculated_price"
+      },
+      model: {
+        type: 'Linear',
+        normalisation: 'Minimum'
+      },
+      factor: 1.4
+    },
   ]
 }
