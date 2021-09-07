@@ -137,7 +137,7 @@ function ProductListing({data, defaultConfig, categories}) {
             onClose={() => setMessage(blankMessage)}
           />}
           <div>
-          <Collapse initiallyOpen="false" title={titles[showConfig]} onCollapseChange={()=>setShowConfig(showConfig === 1 ? 0 : 1)} >
+          <Collapse initiallyOpen={false} title={titles[showConfig]} onCollapseChange={()=>setShowConfig(showConfig === 1 ? 0 : 1)} >
             <div className="border-2 rounded-md p-3">
               {config?.params?.map((item,index)=>(
                 <ConfigItem key={index} index={index} param={item} returnConfig={handleReturnConfig} />
