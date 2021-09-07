@@ -1,0 +1,58 @@
+POST http://localhost:3000/api/globalSort
+Accept: application/json
+Content-type: application/json
+
+[
+    {
+      "key": "Views",
+      "factor": 1, 
+      "model": {
+        "type": "Logarithmic",
+        "normalisation": "Minimum"
+      },
+      "fn": {
+        "args":["product"],
+        "body":"return product.view_count"
+      }
+    }
+]
+
+###
+PUT https://api.bigcommerce.com/stores/e73sh90yy2/v3/catalog/products/95
+X-Auth-Token: l7h27lyf2t7jnk62mjk8nuguwqackmx
+Accept: application/json
+Content-type: application/json
+
+{"sort_order":17}
+
+
+###
+GET https://api.bigcommerce.com/stores/e73sh90yy2/v3/catalog/products/138
+X-Auth-Token: l7h27lyf2t7jnk62mjk8nuguwqackmx
+Accept: application/json
+Content-type: application/json
+
+###
+GET http://localhost:3000/api/products/25
+Accept: application/json
+Content-type: application/json
+
+###
+GET http://localhost:3000/api/config/26?meta_id=1
+Accept: application/json
+Content-type: application/json
+
+###
+GET https://api.bigcommerce.com/stores/e73sh90yy2/v3/catalog/categories/26/metafields
+X-Auth-Token: l7h27lyf2t7jnk62mjk8nuguwqackmx
+Accept: application/json
+Content-type: application/json
+
+{
+  "permission_set": "app_only",
+  "namespace": "MFWS",
+  "key": "config",
+  "value": "asdasd"
+}
+
+###
